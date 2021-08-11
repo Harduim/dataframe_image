@@ -6,7 +6,7 @@ MAX_COLS = 30
 MAX_ROWS = 100
 
 
-def export(
+def to_img(
     obj,
     filename,
     fontsize=14,
