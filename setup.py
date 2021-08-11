@@ -14,7 +14,10 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     keywords="jupyter notebook pandas dataframe image pdf markdown",
     url="https://github.com/Harduim/dataframe_image",
-    packages=setuptools.find_packages(),
+    packages=["df_img"],
+    package_dir={"df_img": "df_img"},
+    package_data={"df_img": ["static/*"]},
+    include_package_data=True,
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -23,5 +26,4 @@ setuptools.setup(
     ],
     python_requires=">=3.8",
     install_requires=["pandas>=1.1.5", "nbconvert>=5", "matplotlib>=3.1", "beautifulsoup4"],
-    include_package_data=True,
 )
