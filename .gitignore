@@ -7,3 +7,4 @@ build/
 .vscode/
 site/
 __init__.pyc
+*-info
