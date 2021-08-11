@@ -105,12 +105,13 @@ class Screenshot:
             f.write(self.html)
 
         with open(temp_img, "wb") as f:
-            args = ["--enable-logging", "--disable-gpu", "--headless"]
+            args = ["--enable-logging", "--disable-gpu", "--headless", "--no-sandbox"]
 
             if self.ss_width and self.ss_height:
                 args.append(f"--window-size={self.ss_width},{self.ss_height}")
 
-            args += ["--hide-scrollbars", f"--screenshot={str(temp_img)}", str(temp_html)]
+            args += [
+                "--hide-scrollbars", f"--screenshot={str(temp_img)}", str(temp_html)]
 
             subprocess.run(executable=self.chrome_path, args=args)
 
