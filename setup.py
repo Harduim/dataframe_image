@@ -25,5 +25,11 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.8",
-    install_requires=["pandas>=1.1.5", "nbconvert>=5", "matplotlib>=3.1", "beautifulsoup4"],
+    install_requires=[
+        "pandas>=1.1.5",
+        "nbconvert>=5",
+        "matplotlib>=3.1",
+        "beautifulsoup4",
+        "kaleido",
+    ],
 )
