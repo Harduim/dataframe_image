@@ -8,3 +8,4 @@ build/
 site/
 __init__.pyc
 *-info
+test.py
