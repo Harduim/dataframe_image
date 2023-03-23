@@ -9,8 +9,6 @@ from tempfile import TemporaryDirectory
 import numpy as np
 from matplotlib import image as mimage
 
-from .pd_html import styler2html
-
 
 def get_system():
     system = platform.system().lower()
@@ -190,15 +188,10 @@ class Screenshot:
         return img_str
 
     def repr_png_wrapper(self):
-        from pandas.io.formats.style import Styler
-
         ss = self
 
         def _repr_png_(self):
-            if isinstance(self, Styler):
-                html = styler2html(self)
-            else:
-                html = self.to_html(max_rows=ss.max_rows, max_cols=ss.max_cols, notebook=True)
+            html = self.to_html(max_rows=ss.max_rows, max_cols=ss.max_cols, notebook=True)
             return ss.run(html)
 
         return _repr_png_
